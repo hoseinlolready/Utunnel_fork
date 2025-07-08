@@ -2,6 +2,10 @@
 echo installing
 apt install wget -y
 echo Please wait
+wget https://github.com/hoseinlolready/bug-free-fortnight/blob/main/utunnel
+mkdir /opt/utunnel
+sudo cp utunnel /opt/utunnel
+clear
 cat << "EOF"
 ██╗      ██████╗ ██╗         ███████╗ ██████╗ ██████╗ ██╗  ██╗
 ██║     ██╔═══██╗██║         ██╔════╝██╔═══██╗██╔══██╗██║ ██╔╝
@@ -9,15 +13,9 @@ cat << "EOF"
 ██║     ██║   ██║██║         ██╔══╝  ██║   ██║██╔══██╗██╔═██╗ 
 ███████╗╚██████╔╝███████╗    ██║     ╚██████╔╝██║  ██║██║  ██╗
 ╚══════╝ ╚═════╝ ╚══════╝    ╚═╝      ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
-                     Fork by @Pedsea                                      
+                    Fork by TG:@Pedsea                                      
 EOF
-
-sleep 5
-
-wget https://github.com/hoseinlolready/bug-free-fortnight/blob/main/utunnel
-mkdir /opt/utunnel
-sudo cp utunnel /opt/utunnel
-
+sleep 8
 # Determine CPU architecture
 ARCH=$(uname -m)
 

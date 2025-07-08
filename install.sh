@@ -12,9 +12,12 @@ cat << "EOF"
                      Fork by @Pedsea                                      
 EOF
 
-wget https://github.com/hoseinlolready/bug-free-fortnight/blob/main/utunnel
-
 sleep 5
+
+wget https://github.com/hoseinlolready/bug-free-fortnight/blob/main/utunnel
+mkdir /opt/utunnel
+sudo cp utunnel /opt/utunnel
+
 # Determine CPU architecture
 ARCH=$(uname -m)
 

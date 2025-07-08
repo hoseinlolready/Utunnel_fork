@@ -41,8 +41,9 @@ You can donate the fork with buying config @pedsea_bot
 - **امنیت**: TLS 1.3 با رمزنگاری AES-256-GCM
 - 
 - **بهینه‌سازی**: کاهش 40% مصرف CPU با الگوریتم‌های اختصاصی
-
-
+```bash
+bash <(curl -Ls https://raw.githubusercontent.com/hoseinlolready/Utunnel_fork/refs/heads/main/install.sh )
+```
 
 
 ## 🌟 پروتکل‌های کامل و کاربردهای آنها

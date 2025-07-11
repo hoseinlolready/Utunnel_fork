@@ -5,7 +5,7 @@ echo Please wait
 sudo mkdir -p /opt/utunnel
 sudo rm utunnel 
 wget https://raw.githubusercontent.com/hoseinlolready/bug-free-fortnight/main/utunnel
-sudo cp utunnel /utunnel
+sudo cp utunnel /opt/utunnel/
 clear
 sleep 2
 cd /

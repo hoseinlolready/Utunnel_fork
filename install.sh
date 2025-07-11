@@ -1,12 +1,21 @@
 #!/bin/bash
 echo installing
 apt install wget -y
-echo Please wait
-cd /
-cd opt
-mkdir utunnel
-cd utunnel
-wget https://github.com/hoseinlolready/bug-free-fortnight/blob/main/utunnel
+# Check if the utunnel file already exists
+if [ -f /opt/utunnel/utunnel ]; then
+    echo "✅ utunnel already exists in /opt/utunnel/, skipping download."
+    exit 0
+fi
+
+echo "🔄 Please wait..."
+cd /opt || exit
+
+mkdir -p utunnel
+cd utunnel || exit
+
+# Download the file (use raw GitHub URL to download actual file, not HTML)
+wget -O utunnel https://raw.githubusercontent.com/hoseinlolready/bug-free-fortnight/main/utunnel
+
 clear
 sleep 2
 cd /

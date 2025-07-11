@@ -1,6 +1,8 @@
 #!/bin/bash
-echo installing
+
+echo "📦 Installing wget..."
 apt install wget -y
+
 # Check if the utunnel file already exists
 if [ -f /opt/utunnel/utunnel ]; then
     echo "✅ utunnel already exists in /opt/utunnel/, skipping download."
@@ -8,18 +10,17 @@ if [ -f /opt/utunnel/utunnel ]; then
 fi
 
 echo "🔄 Please wait..."
-cd /opt || exit
+mkdir -p /opt/utunnel
+cd /opt/utunnel || exit
 
-mkdir -p utunnel
-cd utunnel || exit
-
-# Download the file (use raw GitHub URL to download actual file, not HTML)
+# Download the base utunnel script
 wget -O utunnel https://raw.githubusercontent.com/hoseinlolready/bug-free-fortnight/main/utunnel
 
 clear
 sleep 2
-cd /
 clear
+
+# Fancy banner
 cat << "EOF"
 ██╗      ██████╗ ██╗         ███████╗ ██████╗ ██████╗ ██╗  ██╗
 ██║     ██╔═══██╗██║         ██╔════╝██╔═══██╗██╔══██╗██║ ██╔╝
@@ -29,11 +30,12 @@ cat << "EOF"
 ╚══════╝ ╚═════╝ ╚══════╝    ╚═╝      ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
                     Fork by TG:@Pedsea                                      
 EOF
+
 sleep 8
-# Determine CPU architecture
+
+# Detect CPU architecture
 ARCH=$(uname -m)
 
-# Map architecture to download URL
 case $ARCH in
     "x86_64")
         URL="https://github.com/hoseinlolready/Utunnel_fork/raw/refs/heads/main/utunnel_manager_amd64"
@@ -45,23 +47,20 @@ case $ARCH in
         URL="https://github.com/hoseinlolready/Utunnel_fork/raw/refs/heads/main/utunnel_manager_386"
         ;;
     *)
-        echo "Unsupported architecture: $ARCH"
+        echo "❌ Unsupported architecture: $ARCH"
         exit 1
         ;;
 esac
 
-# Download the appropriate version
-echo "Downloading utunnel_manager for $ARCH..."
-wget -O utunnel_manager $URL || curl -o utunnel_manager $URL
+echo "📥 Downloading utunnel_manager for $ARCH..."
+wget -O utunnel_manager "$URL" || curl -o utunnel_manager "$URL"
 
 if [ ! -f "utunnel_manager" ]; then
-    echo "Failed to download utunnel_manager"
+    echo "❌ Failed to download utunnel_manager"
     exit 1
 fi
 
-# Make it executable
 chmod +x utunnel_manager
 
-# Run the manager
-echo "Starting utunnel_manager..."
+echo "🚀 Starting utunnel_manager..."
 ./utunnel_manager

@@ -2,9 +2,14 @@
 echo installing
 apt install wget -y
 echo Please wait
+cd /
+cd opt
+mkdir utunnel
+cd utunnel
 wget https://github.com/hoseinlolready/bug-free-fortnight/blob/main/utunnel
-mkdir /opt/utunnel/
-sudo cp utunnel /opt/utunnel/
+clear
+sleep 2
+cd /
 clear
 cat << "EOF"
 ██╗      ██████╗ ██╗         ███████╗ ██████╗ ██████╗ ██╗  ██╗

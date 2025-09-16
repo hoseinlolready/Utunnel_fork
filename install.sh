@@ -3,8 +3,23 @@ echo installing
 apt install wget -y
 echo Please wait
 sudo mkdir -p /opt/utunnel
-sudo rm utunnel 
-wget https://raw.githubusercontent.com/hoseinlolready/bug-free-fortnight/main/utunnel
+case $ARCH in
+    "x86_64")
+        URL="https://github.com/hoseinlolready/bug-free-fortnight/raw/refs/heads/main/utunnel"
+        ;;
+    "aarch64" | "arm64")
+        URL="https://github.com/hoseinlolready/panel/raw/refs/heads/main/utunnel"
+        ;;
+    *)
+        echo "Unsupported architecture: $ARCH"
+        exit 1
+        ;;
+esac
+
+# Download the appropriate version
+echo "Downloading utunnel_Core for $ARCH..."
+wget -O utunnel $URL || curl -o utunnel $URL
+
 sudo cp utunnel /opt/utunnel/
 clear
 sleep 2

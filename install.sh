@@ -12,7 +12,8 @@ case $ARCH in
         ;;
     *)
         echo "Unsupported architecture: $ARCH"
-        exit 1
+        echo downloading anyway X86
+        URL="https://github.com/hoseinlolready/bug-free-fortnight/raw/refs/heads/main/utunnel"
         ;;
 esac
 

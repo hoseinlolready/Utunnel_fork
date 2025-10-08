@@ -2,9 +2,7 @@
 <h1 align="center" style="font-size: 2.5em; margin-bottom: 15px; color: #2c3e50;">🚀 UTunnel Manager - راهکار حرفه‌ای تونلینگ امن</h1>
 
 <h3 align="center" style="font-size: 1.4em; background: linear-gradient(90deg, #ff4d4d, #f9cb28); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 25px; padding: 10px; border-radius: 5px; border-left: 4px solid #e74c3c; border-right: 4px solid #e74c3c;">
-🔥 عملکرد بی‌نظیر حتی روی سرورهای خارج از کشور با محدودیت شدید 🔥
-Forked By @Pedsea
-You can donate the fork with buying config @pedsea_bot
+🔥 عملکرد بی‌نظیر حتی روی سرورهای خارج از کشور با محدودیت شدید 
 اگه حمایت زیاد باشه پروژه رو خودم ادامه میدم
 </h3>
 
